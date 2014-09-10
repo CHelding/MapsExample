@@ -9,6 +9,8 @@ import android.location.LocationManager;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,13 +23,19 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements LocationListener {
 
     GoogleMap googleMap;
+    Button buttonShowMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        //setContentView(R.layout.activity_maps);
+        setContentView(R.layout.login_screen);
 
-        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
+        buttonShowMaps = (Button) findViewById(R.id.show_map);
+
+        buttonShowMaps.setOnClickListener(mapHandler);
+
+        /*int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
 
         if(status != ConnectionResult.SUCCESS){
             int requestCode = 10;
@@ -46,8 +54,15 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
                 onLocationChanged(location);
             }
             locationManager.requestLocationUpdates(provider, 20000, 0, this);
-        }
+        } */
     }
+
+    View.OnClickListener mapHandler = new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            
+        }
+    };
 
     @Override
     public void onLocationChanged(Location location) {

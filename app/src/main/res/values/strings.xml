@@ -3,5 +3,8 @@
 
     <string name="app_name">MapsExample</string>
     <string name="title_activity_maps">Map</string>
+    <string name="login_username">Indtast brugernavn</string>
+    <string name="join_game">Tilslut spil</string>
+    <string name="show_map">Vis Kort</string>
 
 </resources>
